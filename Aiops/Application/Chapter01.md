@@ -76,8 +76,9 @@ func main(){
 }
 ```
 <br/><br/>
-# 2. yaml to json, json yo yaml on Golang
-<image source = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-07%2015-59-11.png?raw=true" width=400>
+# 2. yaml to json, json too yaml on Golang
+<img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-07%2015-59-11.png?raw=true" width=1000>
+
 ```go
 package main
 
