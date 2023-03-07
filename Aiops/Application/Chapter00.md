@@ -1,10 +1,8 @@
 
 # 0.Postgresql installation on Ubuntu22.04
 
--- postgres account 실행
--- user로 sammy 추가
--- 
-
+- postgres account 실행
+- user로 sammy 추가<br/><br/><br/>
 ```
 $ sudo apt install postgresql postgresql-contrib 
 
