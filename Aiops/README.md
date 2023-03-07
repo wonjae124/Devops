@@ -4,6 +4,6 @@
 ## 목표
 --- 
 - [x] 00. [Postgresql installation on Ubuntu22.04](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter00.md) 
-- [x] 01. [Yaml,Json on Golang](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter01.md)
-- [x] 02. [Yaml to Json, Json to Yaml on Golang](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter02.md)
-- [X] 03. [Query Postgresql on Golang]
+- [x] 01. [Marshal, Unmarshal Yaml <-> Json on Golang](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter01.md)
+- [x] 02. [ghodss/yaml to Json <-> Yaml on Golang](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter02.md)
+- [X] 03. [Handle postgresql on Golang](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter03.md)
