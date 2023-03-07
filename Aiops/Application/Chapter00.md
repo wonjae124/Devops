@@ -1,5 +1,5 @@
 
-# 0.Postgresql installation on Ubuntu22.04
+# 0.Postgresql installation on Ubuntu 22.04
 
 - postgres account 실행
 - user로 sammy 추가<br/><br/><br/>
