@@ -2,10 +2,10 @@
 # 0.Golang yaml to json
 
 ## Yaml vs json
-### Json은 확장성이 좋으며, 외부로 공개 가능함. 
+### Json은 java machine object로 구성되어, 확장성이 좋다. 외부로 공개 가능함. 
 ### Yaml은 시스템 구성용도로 쓰이며 외부로 공개하지 않음
 ### Json은 serilization format으로, marshal, unmarshal로 이루어진다.
-### Yaml과 Json은 공통적으로 key:value로 구성되며, 기본적으로 json은 yaml으로 parsing해서 표현이 된다
+### Yaml과 Json은 공통적으로 key:value로 구성된다 또한 json parsing을 위해서, 별도로 yaml parsing 후에 yaml의 하위 집합으로 표현한다.
 ### 서로 다른 점으로 Json은 Key를 double quotes로 반드시 감싸야한다. yaml은 그럴 필요가 없다.
 
 - postgres account 실행
