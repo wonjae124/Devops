@@ -76,8 +76,117 @@ func main(){
 }
 ```
 <br/><br/>
+# 2. yaml to json, json yo yaml on Golang
+```go
+package main
 
-# 02. 느낀점
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"os"
+
+	_ "github.com/lib/pq"
+	"gopkg.in/yaml.v3"
+)
+
+type operatingSystems struct{
+	Windows10			int `yaml:"Windows 10"`
+	WindowsServer2019 	int `yaml:"Windows Server 2019"`
+	WindowsServer2022  	int `yaml:"Windows Server 2022"`
+	MacOS 				int `yaml:"MacOS"`
+	CentOS 				int `yaml:"CentOS"`
+	Photon				int `yaml:"Photon"`
+}
+
+type operatingSystemsjson struct {
+	Windows10 			int `json:"Windows 10"`
+	WindowsServer2019 	int `json:"Windows Server 2019"`
+	WindowsServer2022  	int `json:"Windows Server 2022"`
+	MacOS 				int `json:"MacOS"`
+	CentOS 				int `json:"CentOS"`
+	Photon				int `json:"Photon"`
+} 
+
+func main(){
+	fmt.Println("Parsing YAML file")
+	var yamlfileName string = "/home/won/temp/origin-yaml.yml"
+
+
+	// 1. Yaml to Json
+	// pwd : /home/won/바탕화면/go_test/sample-app
+	// yaml file : /home/won/temp/operating-systems.yml
+
+	// Yaml file -> yaml byte
+	yamlFile, err := ioutil.ReadFile(yamlfileName)
+		if err != nil{ 
+			fmt.Printf("Error reading YAML file : %s\n",err)
+			return
+		}
+		// initial yaml struct variables 
+		var oses operatingSystems 
+		// Unmarshal, yaml byte -> yaml struct variables 
+		yaml.Unmarshal(yamlFile, &oses) 
+
+
+	// yaml struct variables -> json struct variabels 
+
+	var osesjson = operatingSystemsjson{
+		Windows10: 			oses.Windows10,
+		WindowsServer2019:	oses.WindowsServer2019,
+		WindowsServer2022: 	oses.WindowsServer2022,
+		MacOS: 				oses.MacOS,
+		CentOS:				oses.CentOS,
+		Photon:				oses.Photon,
+		}
+		
+	// marshal, json struct variables -> json byte
+	jsonOutput, err := json.Marshal(osesjson)
+	// sqlInfo := fmt.Sprintf("Result: %+v\n",osesjson) 
+		fmt.Printf("Result1: %+v\n",osesjson) 
+
+		// json byte -> file
+		// 0644 소유자는 읽기,쓰기 권한, 그룹/기타 사용자는 읽기 권한
+	err = ioutil.WriteFile("./Go-operating-systems.json",jsonOutput,os.FileMode(0644))
+
+	// 2. Json to Yaml
+	// pwd : /home/won/바탕화면/go_test/sample-app
+	// json file : /home/won/temp/operating-systems.json
+
+	fmt.Println("Parsing JSON file")
+	// json byte 
+	var jsonFilename string = "/home/won/temp/origin-json.json"
+	
+	jsonFile, err := ioutil.ReadFile(jsonFilename)
+		if err != nil {
+			fmt.Printf("Error reading JSON FILE : %s\n",err)
+			return
+		}
+		// initial json struct variable
+		var pses operatingSystemsjson
+		// json byte -> json struct variable
+		json.Unmarshal(jsonFile,&pses)
+
+	// json struct variable -> yaml struct variables
+	var psesyaml = operatingSystems{
+		Windows10: 		    pses.Windows10,
+		WindowsServer2019:  pses.WindowsServer2019,
+		WindowsServer2022:  pses.WindowsServer2022,
+		MacOS: 				pses.MacOS,
+		CentOS:				pses.CentOS,
+		Photon:				pses.Photon,	
+	}
+
+	// yaml struct variables -> yaml bytes
+	yamlOutput, err := yaml.Marshal(psesyaml)
+		fmt.Printf("Result2:%+v\n", psesyaml)
+
+	err = ioutil.WriteFile("./Go-operating-systems.yaml",yamlOutput,os.FileMode(0644))
+	fmt.Printf("please:%+v\n", string(yamlOutput))
+}	
+```
+<br/><br/>
+# 03. 느낀점
 
 - 한계점으로, yaml와 json을 변환하려면, yaml과 json 모두 사전에 struct 정의가 필요하기에, 매번 하드코딩하는건 부적합하다고 판단함
 - 만약, yaml이 배포용도의 파일이면, 띄어쓰기와 들여쓰기가 중요함. 하지만, yaml을 json으로 변환할시 indent가 사라지는 문제 존재. 이에,  운영 환경에서, 호환 불가 문제 존재할 것으로 예상
