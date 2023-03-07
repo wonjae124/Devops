@@ -7,7 +7,7 @@
 - Json은 serilization format 이다
 - Yaml과 Json은 공통적으로 key:value로 구성된다 또한 json parsing을 위해서, 별도로 yaml parsing 후에 yaml의 하위 집합으로 표현한다.
 - 서로 다른 점으로 Json은 Key를 double quotes로 반드시 감싸야한다. yaml은 그럴 필요가 없다.
-- golang에서 사용하기 위해서, marshal, unmarshal로 변환이 필요하다.<br/><br/><br/>
+- golang에서 사용하기 위해서, marshal, unmarshal로 변환이 필요하다.<br/><br/>
 
 # 1. Marshal, UnMarshal
 - Marshal   : Go Object(struct,string) => []byte, string
@@ -75,14 +75,14 @@ func main(){
 	
 }
 ```
-<br/><br/><br/>
+<br/><br/>
 
 # 02. 느낀점
 
 - 한계점으로, yaml와 json을 변환하려면, yaml과 json 모두 사전에 struct 정의가 필요하기에, 매번 하드코딩하는건 부적합하다고 판단함
 - 만약, yaml이 배포용도의 파일이면, 띄어쓰기와 들여쓰기가 중요함. 하지만, yaml을 json으로 변환할시 indent가 사라지는 문제 존재. 이에,  운영 환경에서, 호환 불가 문제 존재할 것으로 예상
 - 이에, yaml과 json 변환 패키지 탐색 필요성을 느낌
-<br><br><br>
+<br/><br/>
 
 ### 출처
 
