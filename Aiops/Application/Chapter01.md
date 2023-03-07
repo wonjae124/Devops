@@ -15,12 +15,11 @@
 
 - marshal과 unmarshal 과정을 이해하고자 간단한 예제 연습
   - String(Json string) -> Go object(custom Struct)
+  - `func Marshal(v interface{}) ([]byte, error),      입력 = 정수 또는 구조체, 출력 = 바이트 리스트`<br/>
+  - `func Unmarshal(data []byte, v interface{}) error, 입력 = 바이트 리스트, 출력 = 정수 또는 구조체`
 
-`func Marshal(v interface{}) ([]byte, error),      입력 = 정수 또는 구조체, 출력 = 바이트 리스트`
-`func Unmarshal(data []byte, v interface{}) error, 입력 = 바이트 리스트, 출력 = 정수 또는 구조체`
 
-
-```
+```go
 
 
 package main
@@ -80,6 +79,6 @@ func main(){
 
 ### 출처
 
-- [Linuxhint - Yaml vs json](If you want to parse JSON then you have to use the YAML parser as JSON is a subset of YAML)
+- [Linuxhint - Yaml vs json](https://linuxhint.com/yaml-vs-json-which-is-better/)
 - [Naver blog - Golang Marshal, Unmarshal 차이](https://etloveguitar.tistory.com/44)
 <br><br><br>
