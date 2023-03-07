@@ -41,7 +41,7 @@
   - 해결 : wonjae라는 dbname으로 schema 생성
     <br/><br/>
 
-# 3.완성본
+# 3. 코드
 
 ```go
 package main
@@ -105,14 +105,17 @@ spec:
 }
 ```
 
+# 04. 결과물
+- `Go run test.go`
 <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-07%2016-55-53.png?raw=true">
 
-<img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-07%2016-59-54.png?raw=true" width=2000>
+- dbname: wonjae의 테이블명 t 쿼리
+	- `SELECT * FROM T;`
+<img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-07%2016-59-54.png?raw=true">
 
 <br/><br/>
 
 # 03. 느낀점
-
 - go를 통한 db.create는 자동으로 schema가 생성되지 않으므로 별도 스키마 생성 필요
 
 <br/><br/>
