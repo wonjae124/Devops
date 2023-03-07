@@ -7,7 +7,7 @@
 - Json은 serilization format 이다
 - Yaml과 Json은 공통적으로 key:value로 구성된다 또한 json parsing을 위해서, 별도로 yaml parsing 후에 yaml의 하위 집합으로 표현한다.
 - 서로 다른 점으로 Json은 Key를 double quotes로 반드시 감싸야한다. yaml은 그럴 필요가 없다.
-- golang에서 사용하기 위해서, marshal, unmarshal로 변환이 필요하다.
+- golang에서 사용하기 위해서, marshal, unmarshal로 변환이 필요하다.<br/><br/><br/>
 
 # 1. Marshal, UnMarshal
 - Marshal   : Go Object(struct,string) => []byte, string
@@ -75,7 +75,7 @@ func main(){
 	
 }
 ```
-
+<br/><br/><br/>
 
 ### 출처
 
