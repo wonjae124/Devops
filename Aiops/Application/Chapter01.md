@@ -15,7 +15,14 @@
 
 - marshal과 unmarshal 과정을 이해하고자 간단한 예제 연습
   - String(Json string) -> Go object(custom Struct)
+
+`func Marshal(v interface{}) ([]byte, error),      입력 = 정수 또는 구조체, 출력 = 바이트 리스트`
+`func Unmarshal(data []byte, v interface{}) error, 입력 = 바이트 리스트, 출력 = 정수 또는 구조체`
+
+
 ```
+
+
 package main
 
 import (
@@ -34,19 +41,39 @@ type Info struct {
 	Description string `json:"desc"`
 }
 
+type test struct{
+	Stmt string `json:"stmt"`
+	Num int `json:"age"`
+}
+
 func main(){
+
 	jsonString := `{"name": "battery sensor","capacity":40, "time":
 	"2019-01-21T19:07:28Z", "info": {
 		"desc":"a sensor reading"
 	}}`
-
+	
+	
 	var reading SeonsorReading
-	err := json.Unmarshal([]byte(jsonString),&reading) 
+	
+	err := json.Unmarshal([]byte(jsonString),&reading)
 	if err != nil {
 		fmt.Println(err)
 	} 
 
-	fmt.Printf("%+v\n",reading)
+	fmt.Printf("%+v\n",reading) // {Name:battery sensor Capacity:40 Time:2019-01-21T19:07:28Z Information:{Description:a sensor reading}}
+	
+	/* 
+	struct 형태인걸 다시 string으로 변환 불가. 아래는 error
+	fmt.Printf("%+v\n",string(reading))
+	=> cannot convert reading (variable of type SeonsorReading) to type string
+	*/
+	
+	var i = test{"WHY",1}
+	bytes, _ := json.Marshal(i);
+	fmt.Println(bytes) // [123 34 115 116 109 116 34 58 34 87 72 89 34 44 34 97 103 101 34 58 49 125]
+	fmt.Println(string(bytes)) // {"stmt":"WHY","age":1}
+	
 }
 ```
 
