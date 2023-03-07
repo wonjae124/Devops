@@ -104,6 +104,7 @@ spec:
 	fmt.Println("Done, YAML <-> Json inserting on postgresql")
 }
 ```
+<br/><br/>
 
 # 04. 결과물
 - `Go run test.go`
@@ -123,6 +124,6 @@ spec:
 #### 출처
 
 - [Hevodata - How to use Golang PostgreSQL?](https://hevodata.com/learn/golang-postgres/)
-- [예재로 배우는 Go 프로그래밍 -SQL DB 활용](<[https://linuxhint.com/yaml-vs-json-which-is-better/](http://golang.site/go/article/106-SQL-DB-%ED%99%9C%EC%9A%A9)>)
+- [예재로 배우는 Go 프로그래밍 -SQL DB 활용](http://golang.site/go/article/106-SQL-DB-%ED%99%9C%EC%9A%A9)
 - [GIS DEVELOPER blog - [Golang] PostgreSQL 다루기](http://www.gisdeveloper.co.kr/?p=2456)
   <br><br><br>
