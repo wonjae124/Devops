@@ -77,6 +77,13 @@ func main(){
 ```
 <br/><br/><br/>
 
+# 02. 느낀점
+
+- 한계점으로, yaml와 json을 변환하려면, yaml과 json 모두 사전에 struct 정의가 필요하기에, 매번 하드코딩하는건 부적합하다고 판단함
+- 만약, yaml이 배포용도의 파일이면, 띄어쓰기와 들여쓰기가 중요함. 하지만, yaml을 json으로 변환할시 indent가 사라지는 문제 존재. 이에,  운영 환경에서, 호환 불가 문제 존재할 것으로 예상
+- 이에, yaml과 json 변환 패키지 탐색 필요성을 느낌
+<br><br><br>
+
 ### 출처
 
 - [Linuxhint - Yaml vs json](https://linuxhint.com/yaml-vs-json-which-is-better/)
