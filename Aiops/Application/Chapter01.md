@@ -89,3 +89,4 @@ func main(){
 - [Linuxhint - Yaml vs json](https://linuxhint.com/yaml-vs-json-which-is-better/)
 - [Naver blog - Golang Marshal, Unmarshal 차이](https://etloveguitar.tistory.com/44)
 <br><br><br>
+- [Tistory blog - Marshal, Unmarshal 함수](https://codecollector.tistory.com/1513)
