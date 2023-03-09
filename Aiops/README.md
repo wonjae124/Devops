@@ -15,5 +15,5 @@
 # 3. 영문(application log) text의 자연어를 분석하여 해당 문장의 '부정(오류, 장애), 긍정' 성향 패턴 처리 가능 여부
 ## 목표
 ---
-- [x] 00. [Log dataset]()
+- [x] 00. [Log analysis](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/Chapter00.md)
 - [x] 01. [Text classifiaction - Count/Sequence](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/Chapter01.md)
