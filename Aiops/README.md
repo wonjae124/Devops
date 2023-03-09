@@ -7,3 +7,13 @@
 - [x] 01. [Marshal, Unmarshal Yaml <-> Json on Golang](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter01.md)
 - [x] 02. [ghodss/yaml to Json <-> Yaml on Golang](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter02.md)
 - [X] 03. [Handle postgresql on Golang](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter03.md)
+
+
+# 2. 
+
+
+# 3. 영문(application log) text의 자연어를 분석하여 해당 문장의 '부정(오류, 장애), 긍정' 성향 패턴 처리 가능 여부
+## 목표
+---
+- [] 00. [카운터 기반 문서 분류]
+- [] 01. [시퀀스 기반 문서 분류]
