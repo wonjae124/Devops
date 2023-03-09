@@ -60,6 +60,6 @@ $ sudo -i -u wonjae psql
 ### 출처
 
 - [github - loghub ](https://github.com/logpai/loghub)
-- [github - logizer]( "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-09%2021-54-59.png?raw=true")
+- [github - logizer](https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-09%2021-54-59.png?raw=true)
 - [Papers - LogAnomaly: Unsupervised Detection of
 Sequential and Quantitative Anomalies in Unstructured Logs](https://nkcs.iops.ai/wp-content/uploads/2019/06/paper-IJCAI19-LogAnomaly.pdf)
