@@ -16,4 +16,4 @@
 ## 목표
 ---
 - [x] 00. [Log dataset]()
-- [x] 01. [Text classifiaction - Count/Sequence](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/Chapter00.md)
+- [x] 01. [Text classifiaction - Count/Sequence](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/Chapter01.md)
