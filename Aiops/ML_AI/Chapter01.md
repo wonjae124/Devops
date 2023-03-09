@@ -7,7 +7,7 @@
   - github logizer의 HDFS_10k, anormal dataset 확보
   - 아래의 Structured Log
   - 주요 column으로 Component, content, Eventid, EventTemplate으로 구성되어 있음
-<img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-09%2021-29-01.png?raw=true" width=800>
+      <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-09%2021-29-01.png?raw=true" width=800>
  
 # 1. Log analysis
 - HDFS란?
@@ -21,8 +21,7 @@
   
 
 # 2. Log parsing
-- Process
-    <img src ="https://github.com/logpai/logparser/blob/master/docs/img/example.png?raw=true" width=800>
+<img src ="https://github.com/logpai/logparser/blob/master/docs/img/example.png?raw=true" width=800>
 
 
 - Log message는 unstructred log로 ML에 사용불가
