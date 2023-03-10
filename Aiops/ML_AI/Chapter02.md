@@ -24,8 +24,8 @@ logparser 이용해서 다른 데이터 HDFS 데이터셋으로부터 다양한 
 - Drain demo.py의 파싱 저장 위치를 도커에서 공유한 로컬 폴더의 데이터셋 위치에 저장하도록 변경함 
     <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2013-33-59.png?raw=true" width = 800>
 - EventID의 제대로 regrex 적용 안됨. Issue 발생 -> Parsing은 생략하고, 패키지에서 제대로 parsing 해준 데이터셋을 대안으로 사용
-https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2015-49-30.png
-<br/>
+<img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2015-49-30.png" width=800>
+<br/><br/>
 # 3.예측결과
 
 
