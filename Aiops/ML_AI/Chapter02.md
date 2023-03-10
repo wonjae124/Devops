@@ -10,20 +10,22 @@
     - 딥러닝 모델은 시퀀스를 임베딩 레이어로 받아들여, 고정 길이로 벡터화 한다. 이에 의해, 앞뒤 맥락을 고려하게 된다. 
     - train, validation, test 데이터셋 비율은 8:1:1
         -6352개, 794개, 794개이다
-    - 이벤트의 개수는 총 19개
-    - 모델은 
-    - F1 score 
+    - 이벤트의 개수는 총 19개. 새로운 로그는 14개로 중복되지 않는 이벤트는 2건 존재
+    - 모델은 기본적인 임베딩, RNN, Bi-LSTM으로 성능 비교
+    - F1 score 순위 비교
     - Hyper parameter : batch_size =32, epochs = 50, earlystopping, LR_scheduler(step_decay, start : 0.01)
-    - HDFS데이터셋은 24시간 안의 데이터이며. 내가 가진 데이터의 Time 확인 결과, 203518부터 121018으로 약 4시간의 기록이다.
+    - HDFS 데이터셋은 24시간 안의 데이터이며. 내가 가진 데이터의 Time 확인 결과, 203518부터 121018으로 약 4시간의 기록이다.
 
 # 2.주요 기능 구현 코드
 logparser 이용해서 다른 데이터 HDFS 데이터셋으로부터 다양한 로그를 받아들임.
 `sudo docker run --name logparser -v /home/won/바탕화면/go_test/megazone/nlp/practice:/megazone -it e39c9d4c10d9` 를 이용해서 폴더 공유
 기존 데이터셋의 데이터는 81109로 2008년 11월 09일이며, logparser를 통해 얻은 데이터는 대부분 081110으로 10일 즉, 다음날의 데이터이다.
+
 - Drain demo.py의 파싱 저장 위치를 도커에서 공유한 로컬 폴더의 데이터셋 위치에 저장하도록 변경함 
-<img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2013-33-59.png?raw=true" width = 800>
-
-
+    <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2013-33-59.png?raw=true" width = 800>
+- EventID의 제대로 regrex 적용 안됨. Issue 발생 -> Parsing은 생략하고, 패키지에서 제대로 parsing 해준 데이터셋을 대안으로 사용
+https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2015-49-30.png
+<br/>
 # 3.예측결과
 
 
