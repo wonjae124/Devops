@@ -16,9 +16,10 @@
     - HDFS 데이터셋은 24시간 안의 데이터이며. 내가 가진 데이터의 Time 확인 결과, 203518부터 121018으로 약 4시간의 기록이다.
 
 # 2.Issue 정리
-logparser 이용해서 다른 데이터 HDFS 데이터셋으로부터 다양한 로그를 받아들임.
-`sudo docker run --name logparser -v /home/won/바탕화면/go_test/megazone/nlp/practice:/megazone -it e39c9d4c10d9` 를 이용해서 폴더 공유
-기존 데이터셋의 데이터는 81109로 2008년 11월 09일이며, logparser를 통해 얻은 데이터는 대부분 081110으로 10일 즉, 다음날의 데이터이다.
+- logparser 이용해서 다른 데이터 HDFS 데이터셋으로부터 다양한 로그를 받아들임.
+       `sudo docker run --name logparser -v /home/won/바탕화면/go_test/megazone/nlp/practice:/megazone -it e39c9d4c10d9` 를 이용해서 폴더 공유
+
+- 기존 데이터셋의 데이터는 81109로 2008년 11월 09일이며, logparser를 통해 얻은 데이터는 대부분 081110으로 10일 즉, 다음날의 데이터이다.
 
 - Drain demo.py의 파싱 저장 위치를 도커에서 공유한 로컬 폴더의 데이터셋 위치에 저장하도록 변경함 
     <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2013-33-59.png?raw=true" width = 800>
@@ -26,28 +27,11 @@ logparser 이용해서 다른 데이터 HDFS 데이터셋으로부터 다양한 
     <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2015-49-30.png" width=200>
 <br/><br/>
 
-# 3.예측결과
-
-
-```
-$ sudo apt install postgresql postgresql-contrib 
-
-$ sudo systemctl start postgresql.service
-
-$ go mod init tutorial 
-
-$ sudo -u postgres createuser --interactive
-
-$ sudo -u postgres psql 
-
-$ sudo adduser wonjae
-
-$ sudo -i -u wonjae psql
-
-```
-# 4. 소스코드
-[sentiment analysis]<>
+# 3. 모델 학습 & 기능 구현
+- [Source code](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/sentiment_analysis_rev.ipynb)
+<br/><br/>
 
 ### 출처
 
 - 파이썬 텍스트 마이닝 완벽 가이드
+<br/><br/><br/>
