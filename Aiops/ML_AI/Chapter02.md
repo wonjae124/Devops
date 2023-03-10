@@ -17,6 +17,8 @@
     - 
 
 # 2.주요 기능 구현 코드
+logparser 이용해서 다른 데이터 HDFS 데이터셋으로부터 다양한 로그를 받아들임.
+`sudo docker run --name logparser -v /home/won/바탕화면/go_test/megazone/nlp/practice:/megazone -it e39c9d4c10d9` 를 이용해서 폴더 공유
 
 # 3.예측결과
 
