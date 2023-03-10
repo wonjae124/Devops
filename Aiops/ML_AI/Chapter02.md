@@ -29,6 +29,8 @@
 # 3. 모델 학습 & 기능 구현
 - [Source code](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/sentiment_analysis_rev.ipynb)
 <br/><br/>
+- 기존 로그는 이벤트가 다수였으나, 이벤트가 한 건인 새로운 로그로 예측한 결과, 부정이 긍정보다 압도적으로 많았다.
+- 이처럼, 다수가 아닌 한 개의 이벤트에 대해서는 예측 성능이 낮다고 생각된다.
 
 # 4. 배운점, 느낀점
 - NLP가 사람처럼 맥락을 기억하려는 쪽으로 개선되고 있음을 이해했다.
