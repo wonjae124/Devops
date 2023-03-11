@@ -1,9 +1,9 @@
 # 0.client-go, mibikube install
 - `minikube start --driver=docker`
 
-# 1. 배포 명령어
+# 1. 명령어
 yaml(k8s manifest file)로 배포`kubectl apply -f lister.yaml`
-
+kubectl api 통신 상태 확인 `kubectl api-resources`
 
 # 2. 코드
 
@@ -90,4 +90,5 @@ spec:
 #### 출처
 
 - [client-go library to develop Kubernetes native app](https://youtu.be/vlw1NYySbmQ)
+- [kubuctl cheet sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
   <br><br><br>
