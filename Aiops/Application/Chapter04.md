@@ -1,6 +1,5 @@
 # 0.client-go, mibikube install
 - `minikube start --driver=docker`
-- 
 
 # 1. 
 # 2. 코드
