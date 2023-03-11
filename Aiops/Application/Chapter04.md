@@ -12,7 +12,7 @@
 - 이미지 이름 변경 : `docker tag ~`
 - 이미지 도커 허브로 보내기 : `docker push ~ `
 - 지속적인 노드, 파드, 디플리먼트  : watch kubectl get nodes or podes or deployments
-- 
+
 # 2. 삭제 명령어
 - yaml deployment 삭제
 	- `kubectl delete -f lister.yaml`
