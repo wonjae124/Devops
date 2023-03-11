@@ -25,6 +25,7 @@
 - EventID의 제대로 regrex 적용 안됨. Issue 발생 -> Parsing은 생략하고, 패키지에서 제대로 parsing 해준 데이터셋을 대안으로 사용
     <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2015-49-30.png" width=200>
 <br/><br/>
+- GPU가 작동 안하고 있었음. 현재 RTX3050의 Cuda 11.6임. tensorflow는 최대 cuda 11.2를 지원함. 이에 11.6에서 11.2로 낮추어서 의존성 해결
 
 # 3. 모델 학습 & 기능 구현
 - [Source code](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/sentiment_analysis_rev.ipynb)
@@ -46,4 +47,6 @@
 ### 출처
 
 - 파이썬 텍스트 마이닝 완벽 가이드
-<br/><br/><br/>
+- [github - Ubuntu 22.04 for Deep Learning](https://gist.github.com/amir-saniyan/b3d8e06145a8569c0d0e030af6d60bea>)
+- <br/><br/><br/>
+
