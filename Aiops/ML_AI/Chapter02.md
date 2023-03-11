@@ -48,5 +48,7 @@
 
 - 파이썬 텍스트 마이닝 완벽 가이드
 - [github - Ubuntu 22.04 for Deep Learning](https://gist.github.com/amir-saniyan/b3d8e06145a8569c0d0e030af6d60bea>)
-- <br/><br/><br/>
+
+
+<br/><br/><br/>
 
