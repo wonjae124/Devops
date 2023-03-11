@@ -13,8 +13,6 @@
 ## 목표
 --- 
 - [x] 00. [clinet-go, minikube](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter04.md) 
-- [x] 01. []()
-- [x] 02. []()
 
 # 3. 영문(application log) text의 자연어를 분석하여 해당 문장의 '부정(오류, 장애), 긍정' 성향 패턴 처리 가능 여부
 ## 목표
