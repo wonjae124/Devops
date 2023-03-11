@@ -39,8 +39,8 @@
   	- $ sudo vim /etc/postgresql/14/main/pg_hba.conf
   	- peer, md5 ⇒ trust로 변경
 - schema "wonjae" does not exist
-  - 원인 : dbname이 postgres이기에 schema가 없다는 에러 발생
-  - 해결 : wonjae라는 dbname으로 schema 생성
+  - 원인 : dbname이 'postgres'이기에 schema가 없다는 에러 발생. 이해한 바에 의하면, 데이터베이스가 없다임
+  - 해결 : 'wonjae' db 생성, \connect를 통해 db switch함. 'postgres' -> 'wonjae' 
    
 <br/><br/>
 # 4. 코드
