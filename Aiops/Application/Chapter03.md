@@ -33,8 +33,8 @@
 
 - postgresql relation does not exist
   - 원인1 : postgres 설치할 때, 비밀번호 설정 안함
-  - 원인2 : 비밀번호 미설정으로, access privilege, schema 생성 불가 
-  - 해결 : 비밀번호 없이도 스키사 생성 가능하게 변경
+  - 원인2 : 비밀번호 미설정으로, access privilege에 접근 불가 
+  - 해결 : 비밀번호 없이도 릴레이션 생성 가능하게 변경
   	- $ find / -name pg_hba.conf
   	- $ sudo vim /etc/postgresql/14/main/pg_hba.conf
   	- peer, md5 ⇒ trust로 변경
@@ -124,6 +124,9 @@ spec:
 - GO는 Backend 분야에서 활용되는 언어임을 알게되었으며, 다른 오픈소스와 유연하게 연동이 가능하다는 점에 흥미를 느꼈고 다른 오픈소스와 또 연동을 해보고 싶어졌다
 - db.create는 자동으로 schema가 생성되지 않으므로 별도 스키마 생성 필요하다는걸 느꼈다
 
+## 07. 아쉬운점
+- 릴레이션, 스키마의 개념 이해가 헷갈렸다. 스키마를 별도로 생성해서, 접근 권한을 제어해보는 실습으로 충분히 이해해야 함을 느꼈다.
+ 
 <br/><br/>
 
 #### 출처
