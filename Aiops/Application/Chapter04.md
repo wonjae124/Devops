@@ -11,7 +11,8 @@
 - 이미지 만들기 :`docker build -t $(image name)`
 - 이미지 이름 변경 : `docker tag ~`
 - 이미지 도커 허브로 보내기 : `docker push ~ `
-
+- 지속적인 노드, 파드, 디플리먼트  : watch kubectl get nodes or podes or deployments
+- 
 # 2. 삭제 명령어
 - yaml deployment 삭제
 	- `kubectl delete -f lister.yaml`
@@ -111,24 +112,17 @@ func main() {
 <br/><br/>
 
 # 05. 결과물
-- `Go run test.go`
-	- <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-07%2016-55-53.png?raw=true">
-
-- dbname: wonjae의 테이블명 t 쿼리
-	- `SELECT * FROM t;`
-	- <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-07%2016-59-54.png?raw=true">
-
+- <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-11%2017-54-52.png">
 <br/><br/>
 
 # 06. 느낀점
 - Go 와 sql을 단시간에 구현하며 배울 수 있어서 좋은 기회였고, 성취감이 있었다. 
 - Go로 로컬의 postgresql 서버를 연동해보면서, 다른 프로그램으로의 확장성이 뛰어나다는 점을 다소 이해했다.
 - GO는 Backend 분야에서 활용되는 언어임을 알게되었으며, 다른 오픈소스와 유연하게 연동이 가능하다는 점에 흥미를 느꼈고 다른 오픈소스와 또 연동을 해보고 싶어졌다
-
 <br/><br/>
 
 #### 출처
-
-- [client-go library to develop Kubernetes native app](https://youtu.be/vlw1NYySbmQ)
+- [youtube - client-go library to develop Kubernetes native app](https://youtu.be/vlw1NYySbmQ)
 - [kubuctl cheet sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [youtube - Run your client-go application as a pod in cluster](https://youtu.be/NeV-jR_LssA)
   <br><br><br>
