@@ -2,8 +2,16 @@
 - `minikube start --driver=docker`
 
 # 1. 명령어
-yaml(k8s manifest file)로 pod lister를 배포`kubectl apply -f lister.yaml`
-kubectl api 통신 상태 확인 `kubectl api-resources`
+- yaml(k8s manifest file)로 pod lister를 배포`kubectl apply -f lister.yaml`
+- main.go, go.mod, go.sum을 통합해서 실행파일을 만들기 `go build`
+- pod과의 통신(interacting) `kubectl logs $(pods name)` ex) kubectl logs lister-69685658b8-jrlsd
+- kubectl api role, rolebinding 확인 `kubectl api-resources`
+- 롤 만들기 : `kubectl create role poddepl --resource pods,deployments --verb list`
+- 롤 바인딩 : `kubectl create rolebinding poddepl --role poddepl --serviceaccount default:default`
+
+# 2. 삭제 명령어
+- yaml deployment 삭제 : kubectl delete -f lister.yaml
+- kubectl delete deployment lister
 
 # 2. 코드
 
