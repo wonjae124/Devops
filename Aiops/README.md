@@ -1,4 +1,4 @@
-#### 문서정보 : 2023.03.07. 작성, 작성자 [@wonjae124](https://github.com/wonjae124)
+#### 문서정보 : 2023.03.11. 작성, 작성자 [@wonjae124](https://github.com/wonjae124)
 
 # 1. python, Go lang Yaml to Json, JSon to Yaml 구현 후 Posrgresql 입력
 ## 목표
