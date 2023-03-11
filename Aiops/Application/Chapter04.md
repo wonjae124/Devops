@@ -115,11 +115,6 @@ func main() {
 - <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-11%2017-54-52.png">
 <br/><br/>
 
-# 06. 느낀점
-- Go 와 sql을 단시간에 구현하며 배울 수 있어서 좋은 기회였고, 성취감이 있었다. 
-- Go로 로컬의 postgresql 서버를 연동해보면서, 다른 프로그램으로의 확장성이 뛰어나다는 점을 다소 이해했다.
-- GO는 Backend 분야에서 활용되는 언어임을 알게되었으며, 다른 오픈소스와 유연하게 연동이 가능하다는 점에 흥미를 느꼈고 다른 오픈소스와 또 연동을 해보고 싶어졌다
-<br/><br/>
 
 #### 출처
 - [youtube - client-go library to develop Kubernetes native app](https://youtu.be/vlw1NYySbmQ)
