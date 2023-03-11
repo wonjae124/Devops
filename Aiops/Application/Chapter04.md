@@ -1,7 +1,10 @@
 # 0.client-go, mibikube install
 - `minikube start --driver=docker`
 
-# 1. 
+# 1. 배포 명령어
+yaml(k8s manifest file)로 리소스 생성`kubectl apply -f listner.yaml`
+
+
 # 2. 코드
 
 ```go
