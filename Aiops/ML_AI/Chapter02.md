@@ -52,7 +52,7 @@
 ### 출처
 
 - 파이썬 텍스트 마이닝 완벽 가이드
-- [github - Ubuntu 22.04 for Deep Learning](https://gist.github.com/amir-saniyan/b3d8e06145a8569c0d0e030af6d60bea>)
+- [github - Ubuntu 22.04 for Deep Learning](https://gist.github.com/amir-saniyan/b3d8e06145a8569c0d0e030af6d60bea)
 - [tensorflow cuda check](https://www.tensorflow.org/install/source?hl=ko#gpu)
 
 <br/><br/><br/>
