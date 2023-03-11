@@ -24,6 +24,7 @@
     <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2013-33-59.png?raw=true" width = 800>
 - EventID의 제대로 regrex 적용 안됨. Issue 발생 -> Parsing은 생략하고, 패키지에서 제대로 parsing 해준 데이터셋을 대안으로 사용
     <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2015-49-30.png" width=200>
+    - ubuntu22.04에 최적화(librhash 업데이트)가 필요했던 것으로 추측함. `sudo apt install build-essential pkg-config cmake cmake-qt-gui ninja-build valgrind`
 <br/><br/>
 - GPU가 작동 안하고 있었음. 현재 RTX3050의 Cuda 11.6임. tensorflow는 최대 cuda 11.2를 지원함. 이에 11.6에서 11.2로 낮추어서 의존성 해결
 
