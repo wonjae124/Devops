@@ -2,7 +2,7 @@
 - `minikube start --driver=docker`
 
 # 1. 명령어
-yaml(k8s manifest file)로 배포`kubectl apply -f lister.yaml`
+yaml(k8s manifest file)로 pod lister를 배포`kubectl apply -f lister.yaml`
 kubectl api 통신 상태 확인 `kubectl api-resources`
 
 # 2. 코드
