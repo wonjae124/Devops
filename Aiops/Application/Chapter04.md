@@ -2,7 +2,7 @@
 - `minikube start --driver=docker`
 
 # 1. 배포 명령어
-yaml(k8s manifest file)로 리소스 생성`kubectl apply -f listner.yaml`
+yaml(k8s manifest file)로 배포`kubectl apply -f lister.yaml`
 
 
 # 2. 코드
