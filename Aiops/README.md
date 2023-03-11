@@ -12,7 +12,7 @@
 # 2. k8s helm, client-go 등의 라이브러리(go, python) import 하여 k8s배포후 배포 결과물을 postgresql DB 입력
 ## 목표
 --- 
-- [x] 00. []() 
+- [x] 00. [clinet-go, minikube](https://github.com/wonjae124/Devops/blob/main/Aiops/Application/Chapter04.md) 
 - [x] 01. []()
 - [x] 02. []()
 
