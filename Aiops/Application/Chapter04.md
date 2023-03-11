@@ -8,72 +8,104 @@
 - kubectl api role, rolebinding 확인 `kubectl api-resources`
 - 롤 만들기 : `kubectl create role poddepl --resource pods,deployments --verb list`
 - 롤 바인딩 : `kubectl create rolebinding poddepl --role poddepl --serviceaccount default:default`
+- 이미지 만들기 :`docker build -t $(image name)`
+- 이미지 이름 변경 : `docker tag ~`
+- 이미지 도커 허브로 보내기 : `docker push ~ `
 
 # 2. 삭제 명령어
-- yaml deployment 삭제 : kubectl delete -f lister.yaml
-- kubectl delete deployment lister
+- yaml deployment 삭제
+	- `kubectl delete -f lister.yaml`
+	-`kubectl delete deployment lister`
+- 테이블 삭제 : `DROP TABLE p;`
 
-# 2. 코드
+# 3. 코드
 
-```go
+```golang
+// 순서
+// 1. minkube start
+// 2. dockerfile로 image build 하여, 이미지 생성함. 이미지 이름은 lister:0.1.0
+// 3. dockerpush로 이미지를 로그인된 도커 계정의 허브에 올리기
+// 4. kubectl create deployment 이미지 이름으로 lister.yaml 파일 생성
+// 5. kubectl create -f lister.yaml 으로 pod 배포
+// 6. rest.InclusterConfig()를 통해, 내 프로그램을 k8s에 접속시켜서 config를 받아온다.
+// 7. 팟, 디플로이먼트 리스트를 불러오게끔, role을 지정
+// 8. default namspace의 default service account에 role binding 지정
+// 9. postgresql과 연동해서 입력하도록 코드 추가
+
 package main
 
 import (
+	"context"
 	"database/sql"
+	"flag"
 	"fmt"
+	"time"
 
-	"github.com/ghodss/yaml"
 	_ "github.com/lib/pq"
+
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/client-go/kubernetes" // k8s.io/api v0.26.1, k8s apimachinary 설치
+	"k8s.io/client-go/rest"
+	"k8s.io/client-go/tools/clientcmd" //  기본적인 golang json, yaml, log 설치
 )
-
 func main() {
-	deployment := []byte(`
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-name: my-nginx
-spec:
-template:
-metadata:
-    labels:
-    run: my-nginx
-spec:
-    containers:
-    - name: my-nginx
-    image: nginx
-    ports:
-    - containerPort: 80`)
-
-	// yaml to json
-	jsonBytes, err := yaml.YAMLToJSON(deployment)
-	if err != nil {
-		fmt.Printf("err: %v\n", err)
-		return
+	// k8s 어플리케이션을 host machine에서 돌릴 때는, ./kube/config가 필요하지만, 그게 아니라 클러스터 내부에서 통신은 config를 필요로 하지 않는다. rest 패키지를 쓴다. 
+	kubeconfig := flag.String("kubeconfig","/home/won/.kube/config","location to your kubeconfig file")
+	config, err := clientcmd.BuildConfigFromFlags("", *kubeconfig)
+	config.Timeout = 120 * time.Second
+ 	if err != nil{
+		fmt.Printf("error %s building config from flags\n",err.Error())
+		config, err = rest.InClusterConfig()
+		if err != nil {
+			fmt.Printf("error %s, geting inclusterconfig", err.Error())
+		}
 	}
-	jsonString := string(jsonBytes)
-
-	//json to yaml
-	yamlBytes, err := yaml.JSONToYAML(jsonBytes)
-	if err != nil {
-		fmt.Printf("err: %v\n", err)
-		return
-	}
-	yamlString := string(yamlBytes)
-
-	// DB open
+		// postgresql
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-		"localhost", 5432, "postgres", "won", "wonjae")
+							"localhost",5432,"postgres","won","wonjae")
+				
+	db, err := sql.Open("postgres",psqlInfo)
+	db.Exec("drop table p")
 
-	db, err := sql.Open("postgres", psqlInfo)
 	if err != nil {
 		panic(err)
 	}
-	db.Exec("drop table t")
-	//DB insert
-	db.Exec("create table t(id serial primary key, jsonformat json, yamlformat text)")
-	db.Exec("INSERT INTO t(jsonformat, yamlformat) VALUES($1, $2)", jsonString, yamlString)
+	db.Exec("CREATE TABLE p(id serial primary key, pod text, deployment text)")
 
-	fmt.Println("Done, YAML <-> Json inserting on postgresql")
+	//runtime.Object
+
+	clientset, err := kubernetes.NewForConfig(config) // 새로운 포드 리스트 확인해서 삭제, 업데이트, 디플레이먼트하게끔 인터렉트 가능
+	if err != nil {
+		fmt.Printf("error %s creating clientset\n",err.Error())
+	}
+	ctx := context.Background()
+	pods, err := clientset.CoreV1().Pods("default").List(ctx,metav1.ListOptions{}) // Pods("네임스페이스 이름")
+	if err != nil {
+		fmt.Printf("error %s while listing all the pods form default namespace\n",err.Error())
+	}
+	// pod resource와 api를 통해 디플로이먼트 가능
+	// namespace로 default 선택 
+	fmt.Println("Podes from default namepsace")
+	for _,pod := range pods.Items{
+		podData := fmt.Sprintf("%s", pod.Name)
+		db.Exec("INSERT INTO p(pod) VALUES($1)", podData)
+	}
+
+	fmt.Println("Deployments are ")
+	deployments, err := clientset.AppsV1().Deployments("default").List(ctx,metav1.ListOptions{}) // Deployments("네임스페이스 이름")
+	if err != nil{
+		fmt.Printf("listing deployments %s \n",err.Error())
+	}
+	
+	for _, deployment := range deployments.Items{
+		deploymentData := fmt.Sprintf("%s",deployment.Name)
+		db.Exec("INSERT INTO p(deployment) VALUES($1)", deploymentData)
+	}
+
+	db.Close()
+	// db.Exec("INSERT INTO t(pod, deployment) VALUES($1, $2)", podData, deploymentData)
+	fmt.Println("Done")
+
 }
 ```
 <br/><br/>
