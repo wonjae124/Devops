@@ -16,7 +16,7 @@
 
 # 2. Issue 정리
 - 추가적으로, logparser 이용해서 다른 데이터셋인 HDFS_2k로부터 다양한 로그를 받아옴.
-       `sudo docker run --name logparser -v /home/won/바탕화면/go_test/megazone/nlp/practice:/megazone -it e39c9d4c10d9` 를 이용해서 폴더 공유
+    - `sudo docker run --name logparser -v /home/won/바탕화면/go_test/megazone/nlp/practice:/megazone -it e39c9d4c10d9` 를 이용해서 폴더 공유
 
 - 기존 데이터셋의 데이터는 81109로 2008년 11월 09일이며, logparser를 통해 얻은 데이터는 대부분 081110으로 10일 즉, 다음날의 데이터이다.
 
