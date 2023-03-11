@@ -26,8 +26,10 @@
     <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-10%2015-49-30.png" width=200>
     - ubuntu22.04에 최적화(librhash 업데이트)가 필요했던 것으로 추측함. 
     - `sudo apt install build-essential pkg-config cmake cmake-qt-gui ninja-build valgrind`
-<br/><br/>
 - GPU가 작동 안하고 있었음. 현재 RTX3050의 Cuda 11.6임. tensorflow는 최대 cuda 11.2를 지원함. 이에 11.6에서 11.2로 낮추어서 의존성 해결
+    - 버전	파이썬 버전	컴파일러	빌드 도구	cuDNN	쿠다
+    - 텐서플로우-2.11.0	3.7-3.10	GCC 9.3.1	바젤 5.3.0	8.1	11.2
+<br/><br/>
 
 # 3. 모델 학습 & 기능 구현
 - [Source code](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/sentiment_analysis_rev.ipynb)
@@ -50,7 +52,7 @@
 
 - 파이썬 텍스트 마이닝 완벽 가이드
 - [github - Ubuntu 22.04 for Deep Learning](https://gist.github.com/amir-saniyan/b3d8e06145a8569c0d0e030af6d60bea>)
-
+- [tensorflow cuda check](https://www.tensorflow.org/install/source?hl=ko#gpu)
 
 <br/><br/><br/>
 
