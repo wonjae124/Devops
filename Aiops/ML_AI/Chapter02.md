@@ -30,6 +30,7 @@
     - 버전	파이썬 버전	컴파일러	빌드 도구	cuDNN	쿠다
     - 텐서플로우-2.11.0	3.7-3.10	GCC 9.3.1	바젤 5.3.0	8.1	11.2
 <br/><br/>
+    - pytorch와 tensorflow를 이용하는 사람이라면 nvcc version을 기준으로 설치하기(nvdia-smi 
 
 # 3. 모델 학습 & 기능 구현
 - [Source code](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/sentiment_analysis_rev.ipynb)
