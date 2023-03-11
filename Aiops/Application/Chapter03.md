@@ -34,7 +34,7 @@
 - postgresql relation does not exist
   - 원인1 : postgres 설치할 때, 비밀번호 설정 안함
   - 원인2 : 비밀번호 미설정으로, access privilege, schema 생성 불가 
-  - 해결
+  - 해결 : 비밀번호 없이도 스키사 생성 가능하게 변경
   	- $ find / -name pg_hba.conf
   	- $ sudo vim /etc/postgresql/14/main/pg_hba.conf
   	- peer, md5 ⇒ trust로 변경
