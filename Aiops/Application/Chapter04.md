@@ -40,7 +40,7 @@ import (
 	"k8s.io/client-go/tools/clientcmd" //  기본적인 golang json, yaml, log 설치
 )
 func main() {
-	// k8s 어플리케이션을 host machine에서 돌릴 때는, ./kube/config가 필요하지만, 그게 아니라 클러스터 내부에서 통신은 config를 필요로 하지 않는다. rest 패키지를 쓴다. 
+	// k8s 어플리케이션과 외부 원격 클러스터의 연결은 ./kube/config가 필요하다. 그게 아니라 클러스터 내부에서 통신은 config를 필요로 하지 않는다. rest 패키지를 쓴다. 
 	kubeconfig := flag.String("kubeconfig","/home/won/.kube/config","location to your kubeconfig file")
 	config, err := clientcmd.BuildConfigFromFlags("", *kubeconfig)
 	config.Timeout = 120 * time.Second
