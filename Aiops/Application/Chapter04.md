@@ -22,16 +22,6 @@
 # 3. 코드
 
 ```golang
-// 순서
-// 1. minkube start
-// 2. dockerfile로 image build 하여, 이미지 생성함. 이미지 이름은 lister:0.1.0
-// 3. dockerpush로 이미지를 로그인된 도커 계정의 허브에 올리기
-// 4. kubectl create deployment 이미지 이름으로 lister.yaml 파일 생성
-// 5. kubectl create -f lister.yaml 으로 pod 배포
-// 6. rest.InclusterConfig()를 통해, 내 프로그램을 k8s에 접속시켜서 config를 받아온다.
-// 7. 팟, 디플로이먼트 리스트를 불러오게끔, role을 지정
-// 8. default namspace의 default service account에 role binding 지정
-// 9. postgresql과 연동해서 입력하도록 코드 추가
 
 package main
 
@@ -120,4 +110,5 @@ func main() {
 - [youtube - client-go library to develop Kubernetes native app](https://youtu.be/vlw1NYySbmQ)
 - [kubuctl cheet sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - [youtube - Run your client-go application as a pod in cluster](https://youtu.be/NeV-jR_LssA)
-  <br><br><br>
+- [How to list Kubernetes Pods using Golang SDK - Faizan Bashir](https://faizanbashir.me/how-to-list-kubernetes-pods-using-golang-sdk)
+<br><br><br>
