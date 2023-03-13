@@ -33,6 +33,7 @@
     - 1. 컨테이너들의 라이프사이클이 서로 같은가?
     - 2. 스케일링 요구사항이 같은가? - 웹 서버 vs 데이터베이스, 트래픽이 많은가 vs 그렇지 않은가
     - 3. 인프라 활용도가 더 높아지는 방향으로 설계(쿠버네티스가 노드 리소스 등 여러 상태를 고려하여 pod을 스케쥴링)
+  - pod에 환경변수를 담아 컨테이너에 전달할 수 있다
   
 - service 오브젝트
   - 클러스터 외부에서 접근할 수 있는 고정적인 단일 엔드포인트 필요
@@ -42,11 +43,70 @@
   - 나도 모르는 사이에 node가 꺼질 수 있음. pod은 자가 치유 능력이 없다
   - 사용자가 선언한 수만큼 pod을 유지해주는 Replicaset 오브젝트 도입
   
-# 2. 
+# 2. 코드
+pod ip 확인 : `kubectl get pod -o wide`
+json형식으로 pod 확인 : `kubectl get pod hello-app -o json`
+컨테이너 내부 들여다보기 : `kubectl exec hello-app --cat /etc/json
+환경변수 확인 : `kubectl exec hello-app -- env`
+컨테이너의 리스닝하고 있는 pod 확인 :`kubectl exec hello-app -- netstat -an
+로컬포트의 8080과 파드의 8080을 트래픽 연결하기 : kubectl port-forward hello-app 8080:8080
+리퀘스트, 리스폰드 정보 확인법 : curl -v locatlhost:8080 
+kubectl delete pod --all : pod 전체 삭제
 
 # 3. 코드
 
-```golang
+```
+# Pod API 버전: v1
+# Pod 이름: hello-app
+# Pod 네임스페이스: default
+# 컨테이너 이름/포트: hello-app(8080)
+# 도커 이미지: yoonjeong/hello-app:1.0
+# 환경변수:
+# -- POD_NAME(metadata.name), POD_IP(status.podIP)
+# -- NAMESPACE_NAME(metadata.namespace)
+# -- NODE_NAME(spec.nodeName), NODE_IP(status.hostIP)
+# -- STUDENT_NAME(본인이름), GREETING(STUDENT_NAME을 참조한 인삿말)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-app
+  namespace: default
+spec:
+  containers:
+    - name: hello-app
+      image: yoonjeong/hello-app:1.0
+      ports:
+        - containerPort: 8080
+      env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: NAMESPACE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: NODE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: STUDENT_NAME
+          value: 정원재
+        - name: GREETING
+          value: 안녕하세요. $(STUDENT_NAME)
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+
 
 ```
 <br/><br/>
