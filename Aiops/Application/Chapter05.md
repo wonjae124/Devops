@@ -1,8 +1,4 @@
-# 0.Job with client go
-- 클라이언트를 생성해서, K8s api server에게 talk를 한다.
-
-
-# 1.  
+# 0. kurbernetes object  
 - 클러스터 접속 정보 확인 : `cat ~/.kube/config`
   - kubectl명령어를 내리면 http request를 받아줄 서버가 필요하다. 이 때, 어디로 REST API를 보낼지에 대한 정보가 config에 쓰여져 있다. 
   - 클러스터 유저 말고, 컨텍스트란? : 어떤 클러스터에 사용자가 접속할지를 조합한 정보
@@ -45,7 +41,7 @@
   
   
   
-# 2. 코드
+# 1. option
 - pod ip 확인 : `kubectl get pod -o wide`
 - json형식으로 pod 확인 : `kubectl get pod hello-app -o json`
 - 컨테이너 내부 들여다보기 : `kubectl exec hello-app --cat /etc/json
@@ -85,7 +81,7 @@
 
 
 
-# 3. 코드
+# 2. 코드
 
 ```
 # Pod API 버전: v1
@@ -147,5 +143,6 @@ spec:
 
 
 #### 출처
-- [create-kubernetes-jobs-in-golang](https://youtu.be/vlw1NYySbmQ](https://dev.to/narasimha1997/create-kubernetes-jobs-in-golang-using-k8s-client-go-api-59ej)
+- [Fast campus - DevOps 마스터 Kit
+with Linux, Kubernetes, Docker](https://fastcampus.co.kr/dev_online_awsdevops/?utm_source=google&utm_medium=cpc&utm_campaign=hq%5E210101%5E206717&utm_content=devops&utm_term=&gclid=Cj0KCQjwk7ugBhDIARIsAGuvgPYd_OMj-l6E9FlFSCgKHbwiiCpfnQrQUp9_o8FuWSjS8tkRuZwrCJ4aAqxbEALw_wcB)
 <br><br><br>
