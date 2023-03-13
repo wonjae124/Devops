@@ -9,6 +9,10 @@
 - 서로 다른 점으로 Json은 Key를 double quotes로 반드시 감싸야한다. yaml은 그럴 필요가 없다.
 - golang에서 사용하기 위해서, marshal, unmarshal로 변환이 필요하다.<br/><br/>
 
+## Yaml
+- tab은 사용되지 않는다. 스페이스바로 구분한다.
+- key: value로, 콜론 뒤는 스페이스로 띄워야한다.
+
 # 1. Marshal, UnMarshal
 - Marshal   : Go Object(struct,string) => []byte, string
 - Unmarshal : []byte, string => Go object(struct,string)
