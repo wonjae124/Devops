@@ -43,17 +43,46 @@
   - 나도 모르는 사이에 node가 꺼질 수 있음. pod은 자가 치유 능력이 없다
   - 사용자가 선언한 수만큼 pod을 유지해주는 Replicaset 오브젝트 도입
   
+  
+  
 # 2. 코드
-pod ip 확인 : `kubectl get pod -o wide`
-json형식으로 pod 확인 : `kubectl get pod hello-app -o json`
-컨테이너 내부 들여다보기 : `kubectl exec hello-app --cat /etc/json
-환경변수 확인 : `kubectl exec hello-app -- env`
-컨테이너의 리스닝하고 있는 pod 확인 :`kubectl exec hello-app -- netstat -an
-로컬포트의 8080과 파드의 8080을 트래픽 연결하기 : kubectl port-forward hello-app 8080:8080
-리퀘스트, 리스폰드 정보 확인법 : curl -v locatlhost:8080 
-pod 전체 삭제 : kubectl delete pod --all
-클러스터 세팅 확인 : `kubectl config current-context`
-파드 내의 컨테이너 로그 확인 : `kubectl log blue-green-app -c blue-app`
+- pod ip 확인 : `kubectl get pod -o wide`
+- json형식으로 pod 확인 : `kubectl get pod hello-app -o json`
+- 컨테이너 내부 들여다보기 : `kubectl exec hello-app --cat /etc/json
+- 환경변수 확인 : `kubectl exec hello-app -- env`
+- 컨테이너의 리스닝하고 있는 pod 확인 :`kubectl exec hello-app -- netstat -an
+- 로컬포트의 8080과 파드의 8080을 트래픽 연결하기 : kubectl port-forward hello-app 8080:8080
+- 리퀘스트, 리스폰드 정보 확인법 : curl -v locatlhost:8080 
+- pod 전체 삭제 : kubectl delete pod --all
+- 클러스터 세팅 확인 : `kubectl config current-context`
+- 파드 내의 컨테이너 로그 확인 : `kubectl log blue-green-app -c blue-app`
+- 컨테이너의 환경변수 확인 : `kubectl exec blue-green-app -c blue-app -- printenv POD_IP NAMESPACE NODE_NAME`
+- blue-app 컨테이너 -> green-app 컨테이너 /tree, /hello 요청 실행
+- kubectl exec blue-green-app -c blue-app -- curl -vs localhost:8081/tree
+- kubectl exec blue-green-app -c blue-app -- curl -vs localhost:8081/hello
+
+- green-app 컨테이너 -> blue-app 컨테이너 /sky, /hello 요청 실행
+  - `kubectl exec blue-green-app -c green-app -- curl -vs localhost:8080/sky`
+  - `kubectl exec blue-green-app -c green-app -- curl -vs localhost:8080/hello`
+
+- blue-app 컨테이너 -> red-app 컨테이너(포트번호 8080임). 앱 /rose, /hello 요청 실행
+  - `export RED_POD_IP=$(kubectl get pod red-app -o jsonpath="{.status.podIP}")`
+  - `echo $RED_POD_IP`
+  - `kubectl exec blue-green-app -c blue-app -- curl -vs $RED_POD_IP:8080/rose`
+  - `kubectl exec blue-green-app -c blue-app -- curl -vs $RED_POD_IP:8080/hello`
+
+- red-app 컨테이너 -> blue-app 컨테이너 /sky, /hello 요청 실행
+  - `export BLUE_POD_IP=$(kubectl get pod blue-green-app -o jsonpath="{.status.podIP}")`
+  - `echo $BLUE_POD_IP`
+  - `kubectl exec red-app -- curl -vs $BLUE_POD_IP:8080/sky`
+  - `kubectl exec red-app -- curl -vs $BLUE_POD_IP:8080/hello`
+
+- 포트포워딩을 통해 웹브라우저로 각 컨테이너 요청/응답 확인
+- 로컬호스트의 8080을 컨테이너의 8080으로 넘긴다
+  - `kubectl port-forward blue-green-app 8080:8080`
+  - `kubectl port-forward blue-green-app 8081:8081`
+  - `kubectl port-forward red-app 8082:8080`
+
 
 
 # 3. 코드
