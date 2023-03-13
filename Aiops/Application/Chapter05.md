@@ -51,7 +51,10 @@ json형식으로 pod 확인 : `kubectl get pod hello-app -o json`
 컨테이너의 리스닝하고 있는 pod 확인 :`kubectl exec hello-app -- netstat -an
 로컬포트의 8080과 파드의 8080을 트래픽 연결하기 : kubectl port-forward hello-app 8080:8080
 리퀘스트, 리스폰드 정보 확인법 : curl -v locatlhost:8080 
-kubectl delete pod --all : pod 전체 삭제
+pod 전체 삭제 : kubectl delete pod --all
+클러스터 세팅 확인 : `kubectl config current-context`
+파드 내의 컨테이너 로그 확인 : `kubectl log blue-green-app -c blue-app`
+
 
 # 3. 코드
 
