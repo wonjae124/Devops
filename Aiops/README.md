@@ -26,3 +26,4 @@
 ---
 - [x] 00. [k8s object](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter00.md)
 - [x] 01. [Aiops metric mornitoring](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter01.md)
+- [x] 02. [Roc Curve](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter02.md)
