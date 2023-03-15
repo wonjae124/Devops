@@ -22,7 +22,7 @@
 - [x] 02. [Sentiment analysis](https://github.com/wonjae124/Devops/blob/main/Aiops/ML_AI/Chapter02.md)
 
 <br/><br/><br/>
-#4. 사전과제 이후 보충 공부
+# 4. 사전과제 이후 보충 공부
 ---
 - [x] 00. [k8s object](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter00.md)
 - [x] 01. [Aiops metric mornitoring](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter01.md)
