@@ -38,22 +38,24 @@
       - 시스템의 모든 메트릭 수집, 집계
       - 경고 알림 제공
       - 시각화 가능, 대쉬보드에서 이를사용자 정의 가능   
-      - 
-      - 
+<br/><br/>
 # 2 쿠버네티스에서 에플리케이션 모니터링
 - prometeus
   - 프로메테우스 서버 : 메트릭 수집
   - 익스포터 : 지원용 서버로, k8s와 같이 잘 알려진 서비스에서 기존 메트릭을 익스포트한다.
   - 알림매니저 : 경고 알림 전송
   - 푸시 게이트웨이 : 배치, 스케줄링 작업 등 일시적으로 실행되는 작업으로부터 메트릭 수 
-# 2. metric mornitoring
+<br/><br/>
+# 3. metric mornitoring
 - 톰캣 서버 로그를 모니터링하여 AI를 통한 상관관계 파악하여 핵심 원인을 찾고자 합니다.
 - 이를 위해, prometheus metric을 사용합니다.   
+<img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-16%2022-36-49.png" width=400>
+<br/><br/>
 
-# 
 
 
 
 #### 출처
 - [Youtube - Webinar: Log Analysis with Machine Learning to Find Root Cause Faster](https://youtu.be/MpYB4Qcl570 )
 - [slow-news](https://slownews.kr/86121)
+<br/><br/><br/>
