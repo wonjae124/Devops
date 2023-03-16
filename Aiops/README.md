@@ -24,6 +24,9 @@
 <br/><br/><br/>
 # 4. 사전과제 이후 보충 공부
 ---
-- [x] 00. [k8s object](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter00.md)
+- [x] 00. [k8s pod object](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter00.md)
 - [x] 01. [Aiops metric mornitoring](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter01.md)
 - [x] 02. [Roc Curve](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter02.md)
+- [x] 03. [k8s service object](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter03.md)
+- [ ] 04. [Aiops RoadMap]()
+- [ ] 05. [Aiops engineer job]()
