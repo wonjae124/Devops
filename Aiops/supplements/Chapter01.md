@@ -49,6 +49,7 @@
 # 3. metric mornitoring
 - 톰캣 서버 로그를 모니터링하여 AI를 통한 상관관계 파악하여 핵심 원인을 찾고자 합니다.
 - 이를 위해, prometheus metric을 사용합니다.   
+- Grafana, kubenetes cluster mornitering 
 <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-16%2022-36-49.png" width=400>
 <br/><br/>
 
