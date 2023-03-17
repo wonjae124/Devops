@@ -3,6 +3,8 @@
 
 # 1. Github Action-CI/CD
 - go언어 파일의 테스트 진행
+- .githubs/workflows는 main.go가 있는 곳에 설치해야지 CI 정상 진행됨
+- go mod init github.com/<user name>/<repository name> ex) go mod init github.com/wonjae124/devops-blog
 - `import "testing"` 테스트 함수를 임의 생성 후, `*testing`으로 매개인자를 받아온다.
     - `main.go`
     ```golang
