@@ -21,6 +21,11 @@ Metrics api는 자원의 사용량에 따라, pod의 개수 및 용량을 제한
 - selector를 통해서 mapping이 된다? 이를 확인해보려면, kubectl get endpoints -n snackbar가 필요하다
 - spec이 뭐더라 
 - yaml 파일 작성시 띄어쓰기 두번으로 코드 구분해야한다... Tab 썼다가 실수한다.
+- port : Cluster 내부에서 사용할 Service 객체의 포트
+- targetPort : Service로 전달된 요청을 Pod로 전달할 때 사용하는 포트
+- NodePort : 외부에서 접속하기 위해 사용하는 포트
+
+
 <br/><br/>
 # 2. 코드
 
