@@ -54,7 +54,14 @@
 <br/><br/>
 
 
-
+# 궁금한점
+- 리시버가 뭐지?
+- Kubectl expose service nodeport 가 뭐지? 노드포트로 서비스를 노출하는거군?
+- Minkube service --url가 뭐지? 서비스의 url을 노출한다?
+- Helm repo url와 helm install repo name이 무슨 차이지?
+- repo는 약간 도커로 치면 이미지 같은건가? 그리고 helm으로는 뭘 설치하는거지? 차트를 설치하는건가?
+- grafana의 admin credentials : flUVdVl0rZ02ZHxBvLq7AjcjR2yj2aGjpO4g8xsa
+- 그라파나 nodeport로 노출했는데도, external IP는 없는데? 왜그러지
 
 #### 출처
 - [Youtube - Webinar: Log Analysis with Machine Learning to Find Root Cause Faster](https://youtu.be/MpYB4Qcl570 )
