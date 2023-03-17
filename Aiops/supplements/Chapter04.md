@@ -72,6 +72,6 @@
 #### 출처
 - [Continuous integration with Go and GitHub Actions](https://www.alexedwards.net/blog/ci-with-go-and-github-actions))
 - [Go 패키지 생성에서 버전관리 까지](https://breezymind.com/go-semantic-versioning/)
-<br/><br/><br/>
 - [Youtube - IT](https://youtu.be/xD7BQOyHYjo)
 - [Naver blog - wonjae124](https://blog.naver.com/wonjae124/223047931490)
+<br/><br/><br/>
