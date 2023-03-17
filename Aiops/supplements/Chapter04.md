@@ -67,7 +67,6 @@
 # 느낀점
 - 다음부터 협업을 위해서 테스트 코드를 만들어 CI/CD를 관리 해야겠다.
 - git으로 go 버젼 관리, branch merge 등 실습 예정
-- 
 
 #### 출처
 - [Continuous integration with Go and GitHub Actions](https://www.alexedwards.net/blog/ci-with-go-and-github-actions))
