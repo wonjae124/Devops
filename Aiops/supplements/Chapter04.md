@@ -22,7 +22,6 @@
     - 4. 데이터 시각화 및 보고: 데이터를 시각화하고, 대시보드를 제작하여 IT시스템의 상태를 모니터링하고, 분석 결과를 보고합니다.
     - 5. 팀과의 협업 : IT운영팀과 개발팀과 긴밀하게 협력하여, IT시스템의 성능개선 및 장애 대응에 대한 전략을 수집하고, 실행합니다.
 
--
     
 # 1. Github Action-CI/CD
 - go언어 파일의 테스트 진행
@@ -62,14 +61,14 @@
 
         ```
      - `go test .`      
-        - <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-17%2018-27-38.png" width=1200>
+        <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-17%2018-27-38.png" width=1200>
 
 # 느낀점
 - 다음부터 협업을 위해서 테스트 코드를 만들어 CI/CD를 관리 해야겠다.
 - git으로 go 버젼 관리, branch merge 등 실습 예정
 
 #### 출처
-- [Continuous integration with Go and GitHub Actions](https://www.alexedwards.net/blog/ci-with-go-and-github-actions))
+- [Continuous integration with Go and GitHub Actions](https://www.alexedwards.net/blog/ci-with-go-and-github-actions)
 - [Go 패키지 생성에서 버전관리 까지](https://breezymind.com/go-semantic-versioning/)
 - [Youtube - IT](https://youtu.be/xD7BQOyHYjo)
 - [Naver blog - wonjae124](https://blog.naver.com/wonjae124/223047931490)
