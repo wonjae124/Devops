@@ -36,9 +36,8 @@
             }
 
         ```
-     - `go test .`   
-        
-- <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-17%2018-27-38.png" width=1200>
+     - `go test .`      
+        - <img src = "https://github.com/wonjae124/Devops/blob/main/image/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-03-17%2018-27-38.png" width=1200>
 
 # 느낀점
 - 다음부터, 웬만한 작업에 테스트 코드를 만들어야겠다.
