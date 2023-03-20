@@ -55,15 +55,20 @@
 
 
 # 궁금한점
-- 리시버가 뭐지?
-- Kubectl expose service nodeport 가 뭐지? 노드포트로 서비스를 노출하는거군?
-- Minkube service --url가 뭐지? 서비스의 url을 노출한다?
-- Helm repo url와 helm install repo name이 무슨 차이지?
-- repo는 약간 도커로 치면 이미지 같은건가? 그리고 helm으로는 뭘 설치하는거지? 차트를 설치하는건가?
-- grafana의 admin credentials : flUVdVl0rZ02ZHxBvLq7AjcjR2yj2aGjpO4g8xsa
-- 그라파나 nodeport로 노출했는데도, external IP는 없는데? 왜그러지
+- [x] 리시버 : 프로메테우스 서버의 알림매니저로 여러 유형의 리시버가 지원된다. ex) email, slack, wechat
+  - prometheus-alertmanager의 api_url 필드를 채워, 알람을 보낼 수 있다
+- [x] Kubectl expose service nodeport : 서비스 생성, type은 노드포트(외부에서 접속가능하게), port, target 포트 등을 지정
+
+- [ ] Minkube service --url가 뭐지? 서비스의 url을 노출한다?
+- [ ] Helm repo url와 helm install repo name이 무슨 차이지?
+- [ ] repo는 약간 도커로 치면 이미지 같은건가? 그리고 helm으로는 뭘 설치하는거지? 차트를 설치하는건가?
+- [ ] grafana의 admin credentials : flUVdVl0rZ02ZHxBvLq7AjcjR2yj2aGjpO4g8xsa
+- [ ] 그라파나 nodeport로 노출했는데도, external IP는 없는데? 왜그러지
+
 
 #### 출처
 - [Youtube - Webinar: Log Analysis with Machine Learning to Find Root Cause Faster](https://youtu.be/MpYB4Qcl570 )
 - [slow-news](https://slownews.kr/86121)
-<br/><br/><br/>
+- [쿠버네티스 Service란? (NodePort, nginx 실습)](https://yoonchang.tistory.com/49)
+- <br/><br/><br/>
+
