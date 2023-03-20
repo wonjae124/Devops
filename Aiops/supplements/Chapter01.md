@@ -59,8 +59,8 @@
   - prometheus-alertmanager의 api_url 필드를 채워, 알람을 보낼 수 있다
 - [x] Kubectl expose service nodeport : 서비스 생성, type은 노드포트(외부에서 접속가능하게), port, target 포트 등을 지정
 
-- [ ] Minkube service --url가 뭐지? 서비스의 url을 노출한다?
-- [ ] Helm repo url와 helm install repo name이 무슨 차이지?
+- [x] Minkube service {service name} --url 이란, 외부에서 서비스로 접근 가능한 url을 노출
+- [x] Helm repo url와 helm install repo name이 무슨 차이지?, 앞에는 리포지토리 다운, 뒤에는 다운받은 리포지토리로 설치
 - [ ] repo는 약간 도커로 치면 이미지 같은건가? 그리고 helm으로는 뭘 설치하는거지? 차트를 설치하는건가?
 - [ ] grafana의 admin credentials : flUVdVl0rZ02ZHxBvLq7AjcjR2yj2aGjpO4g8xsa
 - [ ] 그라파나 nodeport로 노출했는데도, external IP는 없는데? 왜그러지
@@ -70,5 +70,6 @@
 - [Youtube - Webinar: Log Analysis with Machine Learning to Find Root Cause Faster](https://youtu.be/MpYB4Qcl570 )
 - [slow-news](https://slownews.kr/86121)
 - [쿠버네티스 Service란? (NodePort, nginx 실습)](https://yoonchang.tistory.com/49)
-- <br/><br/><br/>
-
+- [Prometheus and Grafana setup in Minikube](https://brain2life.hashnode.dev/prometheus-and-grafana-setup-in-minikube)
+- [How to Monitor Golang with Prometheus](https://antonputra.com/monitoring/monitor-golang-with-prometheus/#gauge)
+<br/><br/><br/>
