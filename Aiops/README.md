@@ -29,5 +29,5 @@
 - [x] 02. [Roc Curve](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter02.md)
 - [x] 03. [k8s service object](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter03.md)
 - [x] 04. [Aiops RoadMap](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter04.md)
-- [ ] 05. [Aiops engineer job]
-- [ ] 06. []
+- [ ] 05. [Prometheus user metric](https://github.com/wonjae124/Devops/blob/main/Aiops/supplements/Chapter05.md)
+
