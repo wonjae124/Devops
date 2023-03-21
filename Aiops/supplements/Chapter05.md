@@ -33,6 +33,13 @@ func main() {
 }
 ```
 
+# 1. slack receiver with prometheus
+- [x] (devops 채널에 대한 수신 웹훅 생성)
+- [x] (웹훅 URL 준비 `https://hooks.slack.com/services/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` )
+- [ ] (프로메테우스 경고 알림 룰 준비, 알림 매니저에서 슬랙 리시버 생성을 위해 prometheus-server의 configmap 수정)
+- [ ] (프로메테우스 확인)
+- [ ] (test-pod 배포)
+
 
 #### 출처
 - [간단한 웹서버 도커 이미지 만들기](https://dydtjr1128.gitbook.io/understanding-docker/2.release-docker-container/1-make-simple-docker-image)
