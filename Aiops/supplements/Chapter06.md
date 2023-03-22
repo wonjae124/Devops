@@ -1,10 +1,13 @@
 # 0. 모두의 MLOPS
+## 목표
 
 - [x] minikube, CSI 구축, 클러스터 생성
 - [x] NVIDIA-Docker를 Default Container Runtime으로 설정 
      - 쿠버네티스는 기본적으로 Docker-CE를 Default Container Runtime으로 사용합니다. 
-        따라서, Docker Container 내에서 NVIDIA GPU를 사용하기 위해서는 NVIDIA-Docker 를 Container Runtime 으로 사용하여 pod를 생성할 수 있도록 Default Runtime을 수정해 주어야 합니다
-- [ ]      
+        따라서, Docker Container 내에서 NVIDIA GPU를 사용하기 위해서는 NVIDIA-Docker 를 Container Runtime 으로 사용하여 pod를 생성할 수 있도록
+        Default Runtime을 수정해 주어야 합니다
+- [ ] MLFlow componenet
+- [ ] API Deployment 
 
 # 1. information
 - Kustomize란
